@@ -1,8 +1,8 @@
 local CoreGui = game:GetService("StarterGui") 
   
  CoreGui:SetCore("SendNotification", { 
-     Title = "QQ168777105作者小云", 
-     Text = "你伐木大亨2用不了？找小云", 
+     Title = "执行成功", 
+     Text = " ", 
      Duration = 4,  
  })
 
