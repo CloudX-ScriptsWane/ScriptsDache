@@ -1,8 +1,8 @@
 local CoreGui = game:GetService("StarterGui") 
   
  CoreGui:SetCore("SendNotification", { 
-     Title = "执行成功", 
-     Text = " ", 
+     Title = "圈钱狗", 
+     Text = "麻烦请勿买脚本", 
      Duration = 4,  
  })
 
