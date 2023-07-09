@@ -1,0 +1,1514 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({IntroText = "巴掌模拟器[云脚本]",Name = "制作小云者", HidePremium = false, SaveConfig = true, IntroEnabled = false, ConfigFolder = "slap battles"})
+
+---SafeSpot---
+
+local SafeSpot = Instance.new("Part", workspace)
+
+SafeSpot.Position = Vector3.new(-2000,100,-1500)
+
+SafeSpot.Name = "Spot"
+
+SafeSpot.Size = Vector3.new(800,60,800)
+
+SafeSpot.Anchored = true
+
+SafeSpot.Transparency = .8
+
+---SafeSpot---
+
+local SafeSpot = Instance.new("Part", workspace)
+
+SafeSpot.Position = Vector3.new(-2305.51,-30000,24.27)
+
+SafeSpot.Name = "Spot"
+
+SafeSpot.Size = Vector3.new(800,60,800)
+
+SafeSpot.Anchored = true
+
+SafeSpot.Transparency = .8
+
+---anti voin---
+
+local jesus = Instance.new("Part", workspace)
+
+jesus.Name = "jesusWalk"
+jesus.Size = Vector3.new(2047, 0.009, 2019)
+jesus.Position = Vector3.new(-80.5, -10.005, -246.5)
+jesus.CanCollide = false
+jesus.Anchored = true
+jesus.Transparency = 1
+
+local arenaVoid = Instance.new("Part", workspace)
+
+arenaVoid.Name = "arenaVoid"
+arenaVoid.Size = Vector3.new(798, 1, 1290)
+arenaVoid.Position = Vector3.new(3450, 59.009, 68)
+arenaVoid.CanCollide = false
+arenaVoid.Anchored = true
+arenaVoid.Transparency = 1
+
+---times fish---
+
+local Time = 0
+
+local Total = 3600
+
+---anti cheat bypass---
+
+local Namecall
+Namecall = hookmetamethod(game, '__namecall', function(self, ...)
+   if getnamecallmethod() == 'FireServer' and tostring(self) == 'Ban' then
+       return
+   elseif getnamecallmethod() == 'FireServer' and tostring(self) == 'WalkSpeedChanged' then
+       return
+   elseif getnamecallmethod() == 'FireServer' and tostring(self) == 'AdminGUI' then
+       return
+   end
+   return Namecall(self, ...)
+end)
+
+local Tab = Window:MakeTab({
+Name = "主要的",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab1 = Window:MakeTab({
+Name = "混杂",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+Name = "脚本",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+Name = "反空洞",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+
+local Tab4 = Window:MakeTab({
+Name = "获取手套躲避",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab5 = Window:MakeTab({
+Name = "装备手套",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
+Name = "农场",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab7 = Window:MakeTab({
+Name = "杀死",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab8 = Window:MakeTab({
+Name = "玩家",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab9 = Window:MakeTab({
+Name = "能力卵",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab10 = Window:MakeTab({
+Name = "装备徽章手套",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Tab11 = Window:MakeTab({
+Name = "传送门传送",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+Name = "主要的"
+})
+
+Tab:AddButton({
+Name = "键盘",
+Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  end    
+})
+
+Tab4:AddButton({
+Name = "Tp结束(你通过了)",
+Callback = function()
+      local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
+
+if teleportFunc then
+    teleportFunc([[
+        if not game:IsLoaded() then
+            game.Loaded:Wait()
+        end
+        
+        local localPlr = game:GetService("Players").LocalPlayer
+        repeat wait() until localPlr
+        
+        game:GetService("RunService").RenderStepped:Connect(function()
+            localPlr.Character.HumanoidRootPart.CFrame = CFrame.new(-502.336, 14.228, -179.597)
+        end)
+    ]])
+end
+
+game:GetService("TeleportService"):Teleport(11828384869)
+  end    
+})
+
+Tab4:AddButton({
+Name = "获取键盘代码[无传送]",
+Callback = function()
+      print(#game.Players:GetChildren() * 25 + 1100 - 7)
+  end    
+})
+
+Tab2:AddButton({
+Name = "SR",
+Callback = function()
+      loadstring(game:HttpGet(('https://pastebin.com/raw/Tx7XLqcm'),true))()
+  end    
+})
+
+Tab:AddButton({
+Name = "无限产量",
+Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end    
+})
+
+Tab6:AddButton({
+Name = "传送到安全的地方",
+Callback = function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spot.CFrame * CFrame.new(-300,50,0)
+  end    
+})
+
+Tab6:AddButton({
+Name = "传送到安全2 [测试版]",
+Callback = function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spot.CFrame * CFrame.new(-300,-29950,1500)
+  end    
+})
+
+Tab6:AddToggle({
+Name = "时间ZZZZZZ [数到0-3600 ]",
+Default = false,
+Callback = function(Fish)
+Timer = Fish
+
+      if Fish == true then
+
+          Count()
+
+
+          end
+          
+          
+          
+          function Count()
+
+while Timer do
+
+
+
+task.wait(1)
+
+
+
+
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" and game.Players.LocalPlayer.Character.Ragdolled.Value then
+
+Time = Time + 1
+
+
+print(Time)
+
+
+else
+
+    Time = 0
+
+
+end
+end
+
+end
+end    
+})
+
+Tab6:AddToggle({
+Name = "巴掌球运动员",
+Default = false,
+Callback = function(bool)
+bully = bool
+        
+        if bool == true then
+            
+            BooleanTing()
+            
+            end
+            
+                      
+   function BooleanTing()
+        
+              while bully do
+        
+        wait(.001)
+    
+    for _, v in ipairs(workspace:GetChildren()) do
+    
+    if string.sub(v.Name, 3, 8) == "Baller" then
+game:GetService("ReplicatedStorage").GeneralHit:FireServer(v:WaitForChild("HumanoidRootPart"))
+end
+end
+end
+        
+    end
+end    
+})
+
+Tab3:AddButton({
+Name = "100巴掌上的格斗场(死不了)",
+Callback = function()
+      arenaVoid.CanCollide = true
+arenaVoid.Anchored = true
+arenaVoid.Transparency = 0.5
+  end    
+})
+
+Tab3:AddButton({
+Name = "关100巴掌格斗场(能死)",
+Callback = function()
+      arenaVoid.CanCollide = false
+arenaVoid.Anchored = true
+arenaVoid.Transparency = 1
+  end    
+})
+
+Tab3:AddButton({
+Name = "关常竞技场的反虚空",
+Callback = function()
+      jesus.CanCollide = true
+jesus.Anchored = true
+jesus.Transparency = 0.5
+  end    
+})
+
+Tab3:AddButton({
+Name = "开启竞技场反虚空",
+Callback = function()
+      jesus.CanCollide = false
+jesus.Anchored = true
+jesus.Transparency = 1
+  end    
+})
+
+Tab6:AddToggle({
+Name = "鲍勃自动农场",
+Default = false,
+Callback = function(Get_Bob)
+GetBob = Get_Bob
+         
+        if Get_Bob == true then
+            
+            FarmBob()
+            
+            
+            
+            end
+            
+            
+
+    function FarmBob()
+        
+        while GetBob do
+            
+            task.wait(.25)
+            
+             if not game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
+            
+            task.wait(.76)
+            
+            
+            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.Lobby.Teleport1.CFrame
+            
+            task.wait(.77)
+            
+game:GetService("ReplicatedStorage").Duplicate:FireServer()
+
+task.wait(1.45)
+
+if not workspace:FindFirstChild("bobcap") then
+    
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").HumanoidDied:FireServer(unpack(args))
+
+    else
+        
+        print("wait get bob")
+    
+    end
+
+
+                
+                
+            end
+        
+        
+        
+    end
+            
+            
+            
+            end
+end    
+})
+
+
+Tab2:AddButton({
+Name = "脚本Dizzy hub",
+Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/dizyhvh/slap_battles_gui/main/0.lua"))()
+  end    
+})
+
+Tab2:AddButton({
+Name = "脚本Drippy hub",
+Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/ZombieGamesYT/DrippyHub-1.1/main/DrippyHub%201.2"))()
+  end    
+})
+
+Tab2:AddButton({
+Name = "Fe 飞行脚本",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/RBCKH7yb"))()
+  end
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(杀戮条纹)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").KSHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "掌掴阿鲁阿(死神)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").ReaperHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(钻石)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").DiamondHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(默认)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").b:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿 (ZZZZZZZ)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").ZZZZZZZHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(砖)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").BrickHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(雪)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").SnowHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(拉)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").PullHit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab7:AddButton({
+Name = "拍打阿鲁阿(梦)",
+Callback = function()
+      function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+               game:GetService("ReplicatedStorage").Dreamhit:FireServer(v.Character["Right Arm"])
+               wait(.0001)
+           end
+       end
+   end
+end
+  end    
+})
+
+Tab2:AddButton({
+Name = "MoonUI v10",
+Callback = function()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/IlikeyocutgHAH12/MoonUI-v10-/main/MoonUI%20v10'))()
+  end    
+})
+
+Tab2:AddButton({
+Name = "皇家耳光[超级OP ]",
+Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/Roblox-Scripts/main/Slap_Royale.lua"))()
+  end    
+})
+
+Tab2:AddButton({
+Name = "Turies spy ( 吸 )",
+Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/BDhSQqUU", true))()
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备错误",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Error.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备默认值",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Default.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备钻石",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Diamond.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备 ZZZZZZZ",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.ZZZZZZZ.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备扩展",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Extended.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备砖块",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Brick.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备雪",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Snow.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备拉动",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Pull.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备闪光灯",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Flash.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备弹簧",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Spring.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备交换者",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Swapper.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备公牛",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Bull.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备骰子",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Dice.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备Ghost",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Ghost.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备灭霸",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Thanos.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备眩晕",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Stun.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备堡垒",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Fort.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备磁铁",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Magnet.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备推进器",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Pusher.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备锚",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Anchor.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备空间",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Space.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备回旋镖",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Boomerang.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备梦想",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Dream.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备邮件",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Mail.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备黄金",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Golden.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备鱿鱼",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Squid.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备厚脸皮",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Cheeky.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备收割机",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Reaper.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备复制品",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Replica.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备防御",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Defense.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备杀戮条纹",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Killstreak.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备倒档",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Reverse.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备Shukuchi",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Shukuchi.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备决斗者",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Duelist.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备Woah",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Woah.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备 Ice",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Ice.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备Adios",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Adios.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备被阻止",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Blocked.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备工程师",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Engineer.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备洛基",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Rocky.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备输送机",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Conveyor.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备幻影",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Phantom.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备虫洞",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Wormhole.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备停止",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.STOP.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备轨道",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Track.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备桌面翻转",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Tableflip.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备盾牌",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Shield.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备助推器",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Booster.ClickDetector)
+  end    
+})
+
+Tab5:AddButton({
+Name = "装备制球机",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Baller.ClickDetector)
+  end    
+})
+
+
+Tab5:AddButton({
+Name = "装备Flex",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Flex.ClickDetector)
+  end    
+})
+
+Tab:AddButton({
+Name = "Tin Hub [ 极好的 OP ]",
+Callback = function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/cheesynob39/R20-EXPLOITER/main/Slap_Battles.lua")))()
+  end
+})
+
+Tab:AddButton({
+Name = "反布娃娃",
+Callback = function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/Hc7J1RbR'))()
+  end
+})
+
+local Section = Tab1:AddSection({
+Name = "主要的"
+})
+
+Tab1:AddButton({
+Name = "杀死玩家",
+Callback = function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/z8XndCfN'))()
+  end
+})
+
+local Section = Tab8:AddSection({
+Name = "-----速度控制-----"
+})
+
+Tab8:AddButton({
+Name = "速度控制",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/Ear4002Z"))()
+  end
+})
+
+local Section = Tab8:AddSection({
+Name = "---------速度GUI---------"
+})
+
+Tab8:AddButton({
+Name = "速度 20",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 21",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 22",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 23",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 24",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 25",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 30",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 35",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
+  end
+})
+
+Tab8:AddButton({
+Name = "速度 40",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40
+  end
+})
+
+Tab1:AddButton({
+Name = "点击框 2",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/VGMsvDwc"))()
+  end
+})
+
+Tab1:AddButton({
+Name = "点击框 8",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/PP2ZBHFX"))()
+  end
+})
+
+Tab1:AddButton({
+Name = "点击框 12",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/tKP9wXPX"))()
+  end
+})
+
+local Section = Tab9:AddSection({
+Name = "能力产卵"
+})
+
+Tab9:AddButton({
+Name = "砖块产卵[不能计数得到陷阱]",
+Callback = function()
+
+game.ReplicatedStorage.lbrick:FireServer()
+  end
+})
+
+local Section = Tab9:AddSection({
+Name = "无形能力"
+})
+
+Tab9:AddButton({
+Name = "幽灵不可见",
+Callback = function()
+
+game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "幽灵可见",
+Callback = function()
+
+game.ReplicatedStorage.Ghostinvisibilitydeactivated:FireServer()
+  end
+})
+
+local Section = Tab9:AddSection({
+Name = "能力产卵[巨魔]"
+})
+
+Tab9:AddButton({
+Name = "推动器壁",
+Callback = function()
+
+game.ReplicatedStorage.PusherWall:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "产卵堡",
+Callback = function()
+
+game.ReplicatedStorage.Fortlol:FireServer()
+  end
+})
+
+local Section = Tab9:AddSection({
+Name = "能力产卵[乐趣]"
+})
+
+Tab9:AddButton({
+Name = "反向能力",
+Callback = function()
+
+game.ReplicatedStorage.ReverseAbility:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "产生决斗者",
+Callback = function()
+
+game.ReplicatedStorage.DuelistAbility:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "洛基拍摄",
+Callback = function()
+
+game.ReplicatedStorage.RockyShoot:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "产卵手套",
+Callback = function()
+
+game.ReplicatedStorage.MittenA:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "扔炸弹",
+Callback = function()
+
+game.ReplicatedStorage.BombThrow:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "气泡投掷",
+Callback = function()
+
+game.ReplicatedStorage.BubbleThrow:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "产卵碎片",
+Callback = function()
+
+game.ReplicatedStorage.Shards:FireServer()
+  end
+})
+
+local Section = Tab9:AddSection({
+Name = "能力产卵[一般]"
+})
+
+Tab9:AddButton({
+Name = "屏蔽能力",
+Callback = function()
+
+game.ReplicatedStorage.GeneralAbility:FireServer()
+  end
+})
+
+Tab9:AddButton({
+Name = "产卵球",
+Callback = function()
+
+game.ReplicatedStorage.GeneralAbility:FireServer()
+  end
+})
+
+Tab:AddButton({
+Name = "巴掌没有冷却时间[如果想停止，重新加入]",
+Callback = function()
+
+local Cooldown; Cooldown = hookfunction(wait, function(v)
+    v = 0;
+    return Cooldown(v);
+end);
+  end
+})
+
+Tab6:AddButton({
+Name = "反AFK [100%工作]",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/EgRYtk4F"))()
+  end
+})
+
+local Section = Tab1:AddSection({
+Name = "其他东西[超级OP ]"
+})
+
+Tab1:AddButton({
+Name = "服务器商店",
+Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/eTt96NB5"))()
+  end
+})
+
+local Section = Tab6:AddSection({
+Name = "------新的！！------"
+})
+
+Tab6:AddButton({
+Name = "陷阱自动场[新]",
+Callback = function()
+
+-- script by 40he on yt
+-- watch yt tutorial before farming
+
+HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+-- set shared.hi to false and reset to stop farming
+shared.hi = true
+
+while shared.hi and wait() do
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
+end
+  end
+})
+
+local Section = Tab:AddSection({
+Name = "其他东西[超级好看]"
+})
+
+Tab:AddButton({
+Name = "销毁名牌",
+Callback = function()
+game.Players.LocalPlayer.Character.Head["Nametag"]:Destroy()
+  end
+})
+
+Tab:AddButton({
+Name = "摧毁死亡魔方",
+Callback = function()workspace.Arena.CubeOfDeathArea["the cube of death(i heard it kills)"]:Destroy()
+  end
+})
+
+Tab6:AddButton({
+Name = "巴掌自动农场",
+Callback = function()
+
+local baller = true
+--game:GetService("Workspace").Ã…BallerlIIllIIIllllIIIllIIl["Right Leg"]
+local baseplate = Instance.new("Part")
+baseplate.Parent = workspace
+baseplate.Size = Vector3.new(300,5,300) 
+baseplate.Anchored = true
+baseplate.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,100000,0)  
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = baseplate.CFrame + Vector3.new(0,10,0)
+task.spawn(function()
+while task.wait() and baller == true do 
+    if  workspace:FindFirstChild("\195\133Baller"..game.Players.LocalPlayer.Name) then
+local args = {
+    [1] = workspace:FindFirstChild("\195\133Baller"..game.Players.LocalPlayer.Name):FindFirstChild("Right Arm")
+}
+
+game:GetService("ReplicatedStorage").GeneralHit:FireServer(unpack(args))
+    end
+    end
+    end)
+    while task.wait(35) and baller == true do
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+
+        end
+  end
+})
+
+local Section = Tab10:AddSection({
+Name = "-----装备徽章手套[新]-----"
+})
+
+Tab10:AddButton({
+Name = "装备杂技演员",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Acrobat.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备瘟疫",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Plague.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备连指手套",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Mitten.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备阶段",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Phase.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备扭曲",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Warp.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备炸弹",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Bomb.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备泡泡",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Bubble.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备喷气机",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Jet.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "装备碎片",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Shard.ClickDetector)
+  end    
+})
+
+Tab10:AddButton({
+Name = "即将推出...",
+Callback = function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20
+  end
+})
+
+local Section = Tab10:AddSection({
+Name = "----------[ 新的 ]----------"
+})
+
+Tab10:AddButton({
+Name = "装备弗拉芒",
+Callback = function()
+      fireclickdetector(game:GetService("Workspace").Lobby.Flamarang.ClickDetector)
+  end    
+})
+
+local Section = Tab11:AddSection({
+Name = "-----传送门传送[新]-----"
+})
+
+Tab11:AddButton({
+Name = "普通竞技场",
+Callback = function()
+      
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Lobby.Teleport1.CFrame
+  end
+})
+
+Tab11:AddButton({
+Name = "仅默认竞技场",
+Callback = function()
+      
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Lobby.Teleport2.CFrame
+  end
+})
+
+local Section = Tab11:AddSection({
+Name = "----门户传送[新服务器]------"
+})
+
+Tab11:AddButton({
+Name = "没人拍手套|常规巴掌战",
+Callback = function()
+      
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Lobby.Teleport3.CFrame
+  end
+})
+
+Tab11:AddButton({
+Name = "皇家游戏模式",
+Callback = function()
+      
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Lobby.Teleport4.CFrame
+  end
+})
+
+Tab11:AddButton({
+Name = "仅杀戮条纹游戏模式",
+Callback = function()
+      
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Lobby.Teleport6.CFrame
+  end
+})
+
+Tab:AddButton({
+Name = "重新加入服务器",
+Callback = function()
+      loadstring(game:HttpGet(('https://pastebin.com/raw/X2gaMq46'),true))()
+  end    
+})
