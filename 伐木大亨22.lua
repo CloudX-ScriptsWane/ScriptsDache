@@ -1,9 +1,9 @@
 local CoreGui = game:GetService("StarterGui") 
   
  CoreGui:SetCore("SendNotification", { 
-     Title = "圈钱狗", 
-     Text = "麻烦请勿买脚本", 
-     Duration = 4,  
+     Title = "小云制作", 
+     Text = "已修复！可能显示不见了请联系QQ168777105", 
+     Duration = 10,  
  })
 
 local gs = function(service)
@@ -1797,8 +1797,8 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local Cloudlib = loadstring(game:HttpGet("https://gist.githubusercontent.com/XiaoYunCN/c212174d6263d5a43e95a59110a2724b/raw/c89c61fa5c8149a2554b66f618a32cd3e4d42877/gistfile1.txt", true))()
-local window = Cloudlib:new("白--伐木大亨2", '')
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ato114514/baijiaobengv4beta/main/silent%20ui.txt", true))()
+local window = library:new("白--伐木大亨2", '')
 local Tab1 = window:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
 local Section4 = Tab1:section("普通传送", false)
