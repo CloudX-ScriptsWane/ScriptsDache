@@ -1,8 +1,14 @@
 local CoreGui = game:GetService("StarterGui") 
   
  CoreGui:SetCore("SendNotification", { 
-     Title = "小云制作", 
+     Title = "☁️小云制作", 
      Text = "已修复！可能显示不见了请联系QQ168777105", 
+     Duration = 10,  
+ })
+
+CoreGui:SetCore("SendNotification", { 
+     Title = "☁️小云制作", 
+     Text = "不要相信闲鱼，是永久免费！！", 
      Duration = 10,  
  })
 
