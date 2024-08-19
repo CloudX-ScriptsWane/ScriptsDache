@@ -1,3 +1,6 @@
+repeat
+    task.wait()
+until game.Players.LocalPlayer.Character~=nil;
 return {
 ["qiannuo6332"] = true,
 ["borndam466"] = true,
