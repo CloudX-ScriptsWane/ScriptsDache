@@ -1,4 +1,4 @@
-repeat
+1repeat
     task.wait()
 until game.Players.LocalPlayer.Character~=nil;
 return {
