@@ -2,6 +2,7 @@ repeat
     task.wait()
 until game.Players.LocalPlayer.Character~=nil;
 return {
+["xPharchxy"] = true,
 ["baloen5"] = true,
 ["456awat"] = true,
 ["qiannuo6332"] = true,
