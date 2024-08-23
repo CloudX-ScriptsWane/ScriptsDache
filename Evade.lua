@@ -3,7 +3,7 @@ local Players = game:GetService('Players')
 local localplayer = Players.LocalPlayer
 local GuiService = game:GetService("GuiService")
 local Light = game:GetService("Lighting")
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/UWU/main/O')))()
 OrionLib:MakeNotification({
     Name = "Evade",
     Content = " Evade正在加载。",
