@@ -1,9 +1,5 @@
 
-game:GetService("StarterGui"):SetCore("SendNotification", { -- 发送通知
-            Title = "云脚本提示",
-            Text =  "更新中,
-            Duration = 3
-        })
+
 return {
 ["Zauzavg"] = true,
 ["US_pretty7"] = true,
