@@ -1,6 +1,8 @@
 print("加载完成✅！")
 print("正在验证白名单！")
 return {
+["innkwwmm25"] = true,
+["innkwwmm6"] = true,
 ["sakakalamamal"] = true,--小云测试
 ["mfsp78"] = true,
 ["icym89"] = true,
