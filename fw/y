@@ -1,5 +1,5 @@
-
-
+print("加载完成✅！")
+print("正在验证白名单！")
 return {
 ["majiaqibuchu"] = true,
 ["cjksnvsnr"] = true,
