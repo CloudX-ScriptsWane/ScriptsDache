@@ -7,7 +7,7 @@ local CoreGui = game:GetService("StarterGui")
  })
 
 CoreGui:SetCore("SendNotification", { 
-     Title = "☁️小云提示", 
+     Title = "提示", 
      Text = "不要相信闲鱼，是永久免费！！", 
      Duration = 10,  
  })
