@@ -1,6 +1,7 @@
 print("加载完成✅！")
 print("正在验证白名单！")
 return {
+["ueyywqdf"] = true,
 ["qadgjvfxgh"] = true,
 ["liyingnbr"] = true,
 ["fcjx2016"] = true,
