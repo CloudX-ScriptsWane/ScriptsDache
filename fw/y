@@ -1,6 +1,7 @@
 print("加载完成✅！")
 print("正在验证白名单！")
 return {
+["OPPOnNO5"] = true,
 ["yeonchu222"] = true,
 ["yeonchu523"] = true,
 ["hxg520mmbb"] = true,
