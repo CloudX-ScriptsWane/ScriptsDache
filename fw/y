@@ -1,6 +1,9 @@
 print("加载完成✅！")
 print("正在验证白名单！")
 return {
+["xiaohai_A95"] = true,
+["uxufgix100P"] = true,
+["uxufgix2P"] = true,
 ["boetezjx"] = true,
 ["0012gf"] = true,
 ["pyc132256"] = true,
