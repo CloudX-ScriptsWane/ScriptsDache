@@ -1,6 +1,5 @@
-print("加载完成✅！")
-print("正在验证白名单！")
 return {
+["rufdhju2545"] = true,
 ["exismd93"] = true,
 ["gghy123103"] = true,
 ["xiaohai_A95"] = true,
