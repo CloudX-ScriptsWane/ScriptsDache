@@ -1,14 +1,8 @@
 local CoreGui = game:GetService("StarterGui") 
-  
- CoreGui:SetCore("SendNotification", { 
-     Title = "", 
-     Text = "白脚本作者俢狗", 
-     Duration = 10,  
- })
 
 CoreGui:SetCore("SendNotification", { 
      Title = "提示", 
-     Text = "不要相信闲鱼，是永久免费！！", 
+     Text = "禁止倒卖\n圈狗死全家", 
      Duration = 10,  
  })
 
@@ -243,137 +237,137 @@ InvisibleCharacter.Name = ""
 local CF
 
 lp.CharacterAdded:Connect(function()
-	if lp.Character == InvisibleCharacter then return end
-	repeat wait(.1) until lp.Character:FindFirstChildWhichIsA'Humanoid'
-	if IsRunning == false then
-		IsInvis = false
-		IsRunning = true
-		Character0 = lp.Character
-		Character0.Archivable = true
-		InvisibleCharacter = Character0:Clone()
-		InvisibleCharacter.Name = ""
-		InvisibleCharacter:FindFirstChildOfClass'Humanoid'.Died:Connect(function()
-			Respawn()
-		end)
-		for i,v in pairs(InvisibleCharacter:GetDescendants())do
-			if v:IsA("BasePart") then
-				if v.Name == "HumanoidRootPart" then
-					v.Transparency = 1
-				else
-					v.Transparency = .5
-				end
-			end
-		end
-	end
+        if lp.Character == InvisibleCharacter then return end
+        repeat wait(.1) until lp.Character:FindFirstChildWhichIsA'Humanoid'
+        if IsRunning == false then
+                IsInvis = false
+                IsRunning = true
+                Character0 = lp.Character
+                Character0.Archivable = true
+                InvisibleCharacter = Character0:Clone()
+                InvisibleCharacter.Name = ""
+                InvisibleCharacter:FindFirstChildOfClass'Humanoid'.Died:Connect(function()
+                        Respawn()
+                end)
+                for i,v in pairs(InvisibleCharacter:GetDescendants())do
+                        if v:IsA("BasePart") then
+                                if v.Name == "HumanoidRootPart" then
+                                        v.Transparency = 1
+                                else
+                                        v.Transparency = .5
+                                end
+                        end
+                end
+        end
 end)
 
 local Fix = game:GetService("RunService").Stepped:Connect(function()
-	pcall(function()
-		local IsInteger
-		if tostring(Void):find'-' then
-			IsInteger = true
-		else
-			IsInteger = false
-		end
-		local Pos = lp.Character.HumanoidRootPart.Position
-		local Pos_String = tostring(Pos)
-		local Pos_Seperate = Pos_String:split(', ')
-		local X = tonumber(Pos_Seperate[1])
-		local Y = tonumber(Pos_Seperate[2])
-		local Z = tonumber(Pos_Seperate[3])
-		if IsInteger == true then
-			if Y <= Void then
-				Respawn()
-			end
-		elseif IsInteger == false then
-			if Y >= Void then
-				Respawn()
-			end
-		end
-	end)
+        pcall(function()
+                local IsInteger
+                if tostring(Void):find'-' then
+                        IsInteger = true
+                else
+                        IsInteger = false
+                end
+                local Pos = lp.Character.HumanoidRootPart.Position
+                local Pos_String = tostring(Pos)
+                local Pos_Seperate = Pos_String:split(', ')
+                local X = tonumber(Pos_Seperate[1])
+                local Y = tonumber(Pos_Seperate[2])
+                local Z = tonumber(Pos_Seperate[3])
+                if IsInteger == true then
+                        if Y <= Void then
+                                Respawn()
+                        end
+                elseif IsInteger == false then
+                        if Y >= Void then
+                                Respawn()
+                        end
+                end
+        end)
 end)
 
 for i,v in pairs(InvisibleCharacter:GetDescendants())do
-	if v:IsA("BasePart") then
-		if v.Name == "HumanoidRootPart" then
-			v.Transparency = 1
-		else
-			v.Transparency = .5
-		end
-	end
+        if v:IsA("BasePart") then
+                if v.Name == "HumanoidRootPart" then
+                        v.Transparency = 1
+                else
+                        v.Transparency = .5
+                end
+        end
 end
 
 function Respawn()
-	IsRunning = false
-	if IsInvis == true then
-		pcall(function()
-			lp.Character = Character0
-			wait()
-			Character0.Parent = workspace
-			Character0:FindFirstChildWhichIsA'Humanoid':Destroy()
-			IsInvis = false
-			InvisibleCharacter.Parent = nil
-		end)
-	elseif IsInvis == false then
-		pcall(function()
-			lp.Character = Character0
-			wait()
-			Character0.Parent = workspace
-			Character0:FindFirstChildWhichIsA'Humanoid':Destroy()
-			IsInvis = false
-		end)
-	end
+        IsRunning = false
+        if IsInvis == true then
+                pcall(function()
+                        lp.Character = Character0
+                        wait()
+                        Character0.Parent = workspace
+                        Character0:FindFirstChildWhichIsA'Humanoid':Destroy()
+                        IsInvis = false
+                        InvisibleCharacter.Parent = nil
+                end)
+        elseif IsInvis == false then
+                pcall(function()
+                        lp.Character = Character0
+                        wait()
+                        Character0.Parent = workspace
+                        Character0:FindFirstChildWhichIsA'Humanoid':Destroy()
+                        IsInvis = false
+                end)
+        end
 end
 
 InvisibleCharacter:FindFirstChildOfClass'Humanoid'.Died:Connect(function()
-	Respawn()
+        Respawn()
 end)
 
 function FixCam()
-	workspace.CurrentCamera.CameraSubject = lp.Character:FindFirstChildWhichIsA'Humanoid'
-	workspace.CurrentCamera.CFrame = CF
+        workspace.CurrentCamera.CameraSubject = lp.Character:FindFirstChildWhichIsA'Humanoid'
+        workspace.CurrentCamera.CFrame = CF
 end
 
 function freezecam(arg)
-	if arg == true then
-		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-	else
-		workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
-	end
+        if arg == true then
+                workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+        else
+                workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+        end
 end
 
 function TurnInvisible()
-	if IsInvis == true then return end
-	IsInvis = true
-	CF = workspace.CurrentCamera.CFrame
-	local CF_1 = lp.Character.HumanoidRootPart.CFrame
-	lp.Character.HumanoidRootPart.CFrame=CFrame.new(9e9, 9e9, 9e9)
-	freezecam(true)
-	wait(.6)
-	freezecam(false)
-	InvisibleCharacter = InvisibleCharacter
-	Character0.Parent = game:GetService'Lighting'
-	InvisibleCharacter.Parent = workspace
-	InvisibleCharacter.HumanoidRootPart.CFrame = CF_1
-	lp.Character = InvisibleCharacter
-	FixCam()
-	lp.Character.Animate.Disabled = true
-	lp.Character.Animate.Disabled = false
+        if IsInvis == true then return end
+        IsInvis = true
+        CF = workspace.CurrentCamera.CFrame
+        local CF_1 = lp.Character.HumanoidRootPart.CFrame
+        lp.Character.HumanoidRootPart.CFrame=CFrame.new(9e9, 9e9, 9e9)
+        freezecam(true)
+        wait(.6)
+        freezecam(false)
+        InvisibleCharacter = InvisibleCharacter
+        Character0.Parent = game:GetService'Lighting'
+        InvisibleCharacter.Parent = workspace
+        InvisibleCharacter.HumanoidRootPart.CFrame = CF_1
+        lp.Character = InvisibleCharacter
+        FixCam()
+        lp.Character.Animate.Disabled = true
+        lp.Character.Animate.Disabled = false
 end
 
 function TurnVisible()
-	if IsInvis == false then return end
-	CF = workspace.CurrentCamera.CFrame
-	Character0 = Character0
-	local CF_1 = lp.Character.HumanoidRootPart.CFrame
-	Character0.HumanoidRootPart.CFrame = CF_1
-	InvisibleCharacter.Parent = game:GetService'Lighting'
-	lp.Character = Character0
-	Character0.Parent = workspace
-	IsInvis = false
-	FixCam()
-	lp.Character.Animate.Disabled = true
-	lp.Character.Animate.Disabled = false
+        if IsInvis == false then return end
+        CF = workspace.CurrentCamera.CFrame
+        Character0 = Character0
+        local CF_1 = lp.Character.HumanoidRootPart.CFrame
+        Character0.HumanoidRootPart.CFrame = CF_1
+        InvisibleCharacter.Parent = game:GetService'Lighting'
+        lp.Character = Character0
+        Character0.Parent = workspace
+        IsInvis = false
+        FixCam()
+        lp.Character.Animate.Disabled = true
+        lp.Character.Animate.Disabled = false
 end
 for i, v in next, game:GetService("Players").LocalPlayer.PlayerGui:GetChildren() do
     if v.Name ~= "Chat" and v.Name ~= "TargetGui" then
@@ -1803,7 +1797,7 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ato114514/baijiaobengv4beta/main/silent%20ui.txt", true))()
+local library = loadstring(game:HttpGet("https://github.com/XiaoYunUwU/XiaoYunUwU/raw/main/%E4%BA%91ui"))()
 local window = library:new("白--伐木大亨2", '')
 local Tab1 = window:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
@@ -1915,10 +1909,10 @@ Section1:Button("点击土地免费获得", function()
     notify("白","请你点击一个空的土地",4)
     ClickToSelectClick = Mouse.Button1Up:Connect(function()
     Clicked = Mouse.Target
-   
+
         if  tostring(Clicked.Parent.Name) == "Property" then
             local v =Clicked.Parent
-        
+
             if v:FindFirstChild("Owner") and v.Owner.Value==nil then
                 game.ReplicatedStorage.PropertyPurchasing.ClientPurchasedProperty:FireServer(v, v.OriginSquare.OriginCFrame.Value.p + Vector3.new(0, 3, 0))
                 wait(0.5)
@@ -2022,7 +2016,7 @@ Section1:Button("加载", function()
     ScriptLoadOrSave = false
 end)
 Section1:Button("一键复制", function()
-    
+
 DupeSlot=tonumber(bai.soltnumber)
     local ItemAdded, ItemAdded = game:GetService("Workspace").PlayerModels.ChildAdded:Connect(function(v)
         if v:WaitForChild("Owner") and v.Owner.Value == game.Players.LocalPlayer then
