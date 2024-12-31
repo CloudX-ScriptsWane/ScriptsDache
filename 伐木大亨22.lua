@@ -6,6 +6,12 @@ CoreGui:SetCore("SendNotification", {
      Duration = 10,  
  })
 
+CoreGui:SetCore("SendNotification", { 
+     Title = "提示", 
+     Text = "即将加载，请稍候...", 
+     Duration = 20,  
+ })
+
 local gs = function(service)
     return game:GetService(service)
 end
@@ -1797,7 +1803,7 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local library = loadstring(game:HttpGet("https://github.com/XiaoYunUwU/XiaoYunUwU/raw/main/%E4%BA%91ui"))()
+local library = loadstring(game:HttpGet("https://github.com/CloudX-ScriptsWane/baijiaobengv4beta/raw/main/silent%20ui.txt", true))()
 local window = library:new("白--伐木大亨2", '')
 local Tab1 = window:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
