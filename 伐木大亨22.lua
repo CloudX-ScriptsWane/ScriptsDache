@@ -2,7 +2,7 @@ local CoreGui = game:GetService("StarterGui")
 
 CoreGui:SetCore("SendNotification", { 
      Title = "提示", 
-     Text = "github账号作者：阿云\n圈钱死全家", 
+     Text = "圈钱死全家", 
      Duration = 10,  
  })
 
