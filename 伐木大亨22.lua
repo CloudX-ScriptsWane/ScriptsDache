@@ -2,12 +2,6 @@ local CoreGui = game:GetService("StarterGui")
 
 CoreGui:SetCore("SendNotification", { 
      Title = "提示", 
-     Text = "圈钱死全家", 
-     Duration = 10,  
- })
-
-CoreGui:SetCore("SendNotification", { 
-     Title = "提示", 
      Text = "即将加载，请稍候...", 
      Duration = 20,  
  })
