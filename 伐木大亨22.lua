@@ -1797,7 +1797,7 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local library = loadstring(game:HttpGet("https://github.com/CloudX-ScriptsWane/baijiaobengv4beta/raw/main/silent%20ui.txt", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CloudX-ScriptsWane/UI-library/refs/heads/main/silent%20ui.lua", true))()
 local window = library:new("白--伐木大亨2", '')
 local Tab1 = window:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
