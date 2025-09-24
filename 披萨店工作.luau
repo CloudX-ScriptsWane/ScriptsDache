@@ -1,5 +1,5 @@
 game:GetService("StarterGui"):SetCore("SendNotification", { 
-     Title = "云脚本", 
-     Text = "未知", 
+     Title = "小云提醒", 
+     Text = "我不小心把仓库删了", 
      Duration = 15,  
  })
